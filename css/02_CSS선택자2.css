@@ -1,0 +1,154 @@
+/* css 파일은 style 태그 내부에 작성한다 */
+
+h2 {
+    color: red;
+}
+
+code {
+    background-color: aquamarine;
+    font-weight: bold; 
+    display: block;
+}
+
+/* ----기본 속성 선택자---- */
+
+/* div 태그 중 name="name-1" 속성값에 배경색 지정 */
+div[name="name-1"] {
+    background-color: green;
+}
+
+div[name="name-2"] {
+    background-color: yellow;
+}
+
+/* 모든 div 요소 글자색 보라색으로 */
+div {
+    color: purple;
+}
+
+p[data="data-1"] {
+    background-color: hotpink;
+}
+
+/* 내용 p3, p4인 요소 배경색 blue (내용만으로 지정X, 같은 요소값 있는지 확인 */
+p[data="data-2"] {
+    background-color: brown;
+}
+
+/* 모든 요소중 name-1 인것. => div1, div2, p2, p3 */
+/* 모든요소(*) 별 생략 가능 */
+[name="name-1"] {
+    font-size: 30px;
+}
+
+/* 자식 선택자(>) */
+#parent1 {
+    background-color: silver;
+}
+
+#parent1 > li {
+    background-color: gold;
+}
+
+#parent1 > li > span {
+    color: red;
+}
+
+/* ---- 후손선택자 ( ) ---- */
+
+#parent2 p {
+    background-color: orchid;
+}
+
+#parent2 > div > p {background-color: rgb(17, 54, 23);}
+
+
+/* 반응 선택자 */
+.test-div {
+    border: 3px solid black;
+    width: 200px;
+    height: 200px;
+    background-color: #ddd; /* #ddd(16진수) */
+    margin-bottom: 30px;
+    cursor: pointer; /* 마우스 커서 손가락모양(클릭할거 같은 거)👆 */
+}
+
+/* 클릭되는 중에만 노란색으로 변함 */
+#activeBox:active {
+    background-color: yellow;
+}
+
+/* 마우스가 올라왔을 때 변함 */
+#hoverBox:hover {
+    background-image: url('https://i.namu.wiki/i/5xf56Gu1S-1zx9WqTBe9Ec3NTyHhxOQ2-GEdS0iFoqE4om_J4sQ2MSwN09cMWX4PcmKWSMwD31ENXdiwcH8jBA.gif');
+    background-size: 270px ;
+}
+
+/* ----상태 선택자---- */
+
+/* :focus */
+#input1:focus {
+    outline-color: greenyellow;
+}
+
+#input1 {
+    border-color: red;
+}
+
+/* checked */
+#input2:checked {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    /* radio, checkbox 에서 보이는 표시는 image 이기 때문에 배경색 적용X */
+}
+
+/* :enabled / :disabled */
+.input3:enabled {
+    background-color: skyblue;
+}
+
+.input3:disabled {
+    background-color: lightcoral;
+}
+
+/* ----동위 선택자---- */
+
+/* + : 바로 뒤 형제 요소 하나 */
+#div1 + div {
+    background-color: yellow;
+}
+
+/* ~ : 뒤 존재하는 일치하는 모든 형제 요소 */
+#div3 ~ div {
+    background-color: springgreen;
+}
+
+/* ----체크박스 만들기---- */
+
+/* 1. label 요소를 체크박스 모양으로 만들기 */
+#check + label {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+
+    /* inline 요소는 크기 지정 불가한데 이거로 가능하게 함.
+       한 줄 배치, 크기 지정 O */
+    display: inline-block;
+
+    cursor: pointer;
+    border-radius: 20%;
+
+    user-select: none; /* 유저가 선택 못하게 함 */
+}
+
+/* 2. 체크박스가 체크 되었을 때 label에 체크박스 이미지 표시 */
+#check:checked + label {
+    background-image: url(/01_HTML/images/checkbox.png);
+    background-size: cover;
+}
+
+/* 3. 체크박스 안 보이게 처리 */
+#check {
+    display: none;
+}
