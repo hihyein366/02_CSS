@@ -91,7 +91,7 @@
 }
 
 /* 상하좌우 2분할 */
-#test5 > .c2, .c3 {
+#test5 > .aa, .cc {
     height: 50%;
 }
 
@@ -99,7 +99,7 @@
     background-color: brown;
 }
 
-#test5 > .c2 .bb {
+#test5 > .aa .bb {
     height: 100%;
     width: 50%;
     background-color: grey;
@@ -109,7 +109,7 @@
     background-color: black;
 }
 
-#test5 > .c3 .dd {
+#test5 > .cc .dd {
     height: 100%;
     width: 50%;
     background-color: yellowgreen;

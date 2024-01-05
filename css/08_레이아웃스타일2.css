@@ -1,0 +1,87 @@
+* {
+    /* 모든 요소에 width/height 설정될 때
+    content = width/height - (border*2) - (padding*2)
+    한 크기로 자동 계산해서 설정
+    = 걍 설정 크기 맞춰서 content 줄여준다 
+     */
+    box-sizing: border-box;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: lightsalmon;
+}
+
+/* border 영역 */
+.border {
+    border: 10px solid black;
+
+}
+
+/* content 영역 */
+.content {
+    width: 150px;
+    height: 150px;
+
+    /* width/height 설정 값이 content 영역에만 적용 
+       ~> 사이즈 보더까지 170x170됨 */
+    box-sizing: content-box;
+}
+
+/* padding(content, border 사이) 영역 */
+.padding {
+    width: 200px;
+    height: 200px;
+
+    /* 상하좌우 적용 */
+    padding: 20px;
+}
+
+/* margin 영역 */
+.margin {
+
+    /* 상하좌우 다른요소(부모, 형제)와 간격 설정 */
+    margin: 50px;
+}
+
+.margin2 {
+    margin: 100px;
+}
+
+/* padding, border, margin의 방향성 */
+#test1 {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 15px;
+
+    margin-top: 30px;
+    margin-bottom: 100px;
+    margin-left: 50px;
+    margin-right: 300px;
+
+
+    border-top   : 5px solid red;
+    border-bottom: 3px dotted black;
+    border-left  : 5px double purple;
+    border-right : 3px dashed chartreuse;
+}
+
+#test2 {
+    border: 1px solid black;
+}
+
+/* margin: auto; 테스트 */
+.container {
+    width: 500px;
+    height: 500px;
+    border: 3px solid black;
+    box-sizing: content-box;
+}
+
+#test3 {
+    margin: auto;
+    margin-top: 200px; /* 계산해서 상하 중간 맞춤 */
+}
+
