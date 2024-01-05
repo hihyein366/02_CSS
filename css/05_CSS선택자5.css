@@ -1,0 +1,54 @@
+/* :only-child */
+
+/* test1의 유일한 자식이 p태그면 선택 */
+#test1 > p:only-child {
+    background-color: orange;
+}
+
+/* test2는 자식이 둘이라 안됨(p, pre -> 유일X) */
+#test2 > p:only-child {
+    background-color: orange;
+}
+
+/* :only-of-type */
+
+/* 모든 p태그 선택 했는데 딱 하나만 존재할 경우 선택 */
+#test3 > p:only-of-type {
+    background-color: pink;
+}
+
+#test3 > pre:only-of-type {
+    background-color: skyblue;
+}
+
+/* :empty */
+
+#test4 > p:empty {
+    height: 30px;
+    background-color: rgb(187, 243, 103);
+}
+
+/* 여러 요소 동시 선택 */
+
+#test5-1, .test5-2, [name="test5-3"] {
+    border: 3px dotted gold;
+    border-bottom: 3px solid green;
+}
+
+
+.test6 {
+    background-color: yellow;
+}
+
+.aaa {
+    font-size: 30px;
+}
+
+/* class 속성값으로 test6, aaa 둘 다 가지고 있는 요소만 선택
+(class 선택자 공백없이 이어서 작성)
+(공백하면 후손 선택자가 됨 (>))
+*/
+.test6.aaa {
+    color: red;
+}
+

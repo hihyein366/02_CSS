@@ -1,0 +1,145 @@
+/* class 기반 CSS */
+
+.area1 { background-color: red;}
+.area2 { background-color: orange;}
+.area3 { background-color: yellow;}
+.area4 { background-color: green;}
+.area5 { background-color: blue;}
+
+.block {
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    color: white;
+    display: block;
+}
+
+.inline { display: inline; }
+.inline-block { display: inline-block; }
+.none { display: none; }
+
+/* visibility 속성 : 요소 보이게/안보이게 만드는 속성
+                  -> 안보이게 만들어도 공간은 차지함
+*/
+.hidden { visibility: hidden; }
+
+/* ----------------------------------------------------- */
+
+/* 상하 2분할 */
+
+/* 감싸는 요소 */
+.container {
+    border: 3px solid black;
+    width: 472px;
+    height: 471px;
+}
+
+/* 내부 영역 분할 요소(자식) */
+
+#test1 > div {
+    /* width: 100%; */ /* div는 어차피 한 행 차지라 width 100%은 노필요 */
+    height: 50%;
+}
+
+#test1 > div:first-child {
+    background-color: lightpink;
+}
+
+#test1 > div:last-child {
+    background-color: darkslateblue;
+}
+
+/* 상하 3분할 */
+#test2 > div:first-child {
+    height: 20%;
+    background-color: red;
+}
+
+#test2 > div:nth-child(2) {
+    height: 30%;
+    background-color: yellow;
+}
+#test2 > div:last-child {
+    height: 50%;
+    background-color: green;
+}
+
+/* 상하 3분할 - 방법2 */
+.bg-red{background-color: red;}
+.bg-yellow{background-color: yellow;}
+.bg-green{background-color: green;}
+.bg-blue{background-color: blue;}
+
+.h-20{height: 20%;}
+.h-30{height: 30%;}
+.h-50{height: 50%;}
+
+/* 좌우 2분할 */
+
+#test4 > div {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+}
+
+#test4 > div:first-child {
+    background-color: red;
+}
+
+#test4 > div:last-child {
+    background-color: blue;
+}
+
+/* 상하좌우 2분할 */
+#test5 > .c2, .c3 {
+    height: 50%;
+}
+
+#test5 > .aa {
+    background-color: brown;
+}
+
+#test5 > .c2 .bb {
+    height: 100%;
+    width: 50%;
+    background-color: grey;
+}
+
+#test5 > .cc {
+    background-color: black;
+}
+
+#test5 > .c3 .dd {
+    height: 100%;
+    width: 50%;
+    background-color: yellowgreen;
+}
+
+/* 강사님 상하좌우 예시 */
+.row {
+    width: 100%;
+    height: 50%;
+}
+
+.col {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+}
+
+/* 강사님 예시2 */
+#test6 {
+    /* inline, inline-block, 글들 사이의 높이 간격 0으로 */
+    line-height: 0;
+}
+
+#test6 > div{
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+}
+
+#test6 > div:nth-child(1) { background-color: rebeccapurple; }
+#test6 > div:nth-child(2) { background-color: indianred; }
+#test6 > div:nth-child(3) { background-color: wheat; }
+#test6 > div:nth-child(4) { background-color: peru; }
